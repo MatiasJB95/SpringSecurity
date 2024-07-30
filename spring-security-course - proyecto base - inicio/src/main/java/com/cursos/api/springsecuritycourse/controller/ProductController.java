@@ -13,6 +13,7 @@ public class ProductController {
 
     @GetMapping
     public ResponseEntity<Page<Product>>findAll(Pageable pageable){
-        Page<Product> productPage =
+        Page<Product> productPage =productService.findAll(pageable);
+        
     }
 }
