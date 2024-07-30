@@ -2,6 +2,7 @@ package com.cursos.api.springsecuritycourse.controller;
 
 import com.cursos.api.springsecuritycourse.persistence.entity.Product;
 import com.cursos.api.springsecuritycourse.service.ProductService;
+import jakarta.validation.Valid;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
@@ -32,11 +33,7 @@ public class ProductController {
         return ResponseEntity.notFound().build();
     }
     @PostMapping ("/{productId}")
-    public ResponseEntity<Product>findOneById(@RequestBody SaveProduct saveProduct){
-        Optional<Product> product = productService.findByOneId(productId);
-        if (product.isPresent()){
-            return ResponseEntity.ok(product.get());
-        }
-        return ResponseEntity.notFound().build();
+    public ResponseEntity<Product>Create(@RequestBody @Valid SaveProduct saveProduct){
+        
     }
 }
