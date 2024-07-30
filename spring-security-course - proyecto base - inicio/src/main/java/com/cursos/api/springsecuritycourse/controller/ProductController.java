@@ -14,6 +14,9 @@ public class ProductController {
     @GetMapping
     public ResponseEntity<Page<Product>>findAll(Pageable pageable){
         Page<Product> productPage =productService.findAll(pageable);
-        
+        if (productPage.hasContent()){
+            return ResponseEntity.ok(productPage);
+        }
+        return ResponseEntity.notFound().build();
     }
 }
