@@ -1,9 +1,6 @@
 package com.cursos.api.springsecuritycourse.persistence.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 import java.math.BigDecimal;
 
@@ -14,7 +11,7 @@ public class Product {
     private Long id;
     private String name;
     private BigDecimal price;
-    
+    @Enumerated(EnumType.STRING)
     private ProductStatus status;
 
     public static enum ProductStatus {
