@@ -32,7 +32,7 @@ public class ProductController {
         return ResponseEntity.notFound().build();
     }
     @PostMapping ("/{productId}")
-    public ResponseEntity<Product>findOneById(SaveProduct saveProduct){
+    public ResponseEntity<Product>findOneById(@RequestBody SaveProduct saveProduct){
         Optional<Product> product = productService.findByOneId(productId);
         if (product.isPresent()){
             return ResponseEntity.ok(product.get());
