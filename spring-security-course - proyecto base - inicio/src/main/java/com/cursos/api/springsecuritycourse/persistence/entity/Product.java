@@ -14,6 +14,7 @@ public class Product {
     private Long id;
     private String name;
     private BigDecimal price;
+    
     private ProductStatus status;
 
     public static enum ProductStatus {
