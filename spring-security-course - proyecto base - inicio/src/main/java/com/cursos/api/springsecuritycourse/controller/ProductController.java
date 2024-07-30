@@ -12,5 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class ProductController {
 
     @GetMapping
-    public ResponseEntity<Page<Product>>findAll(Pageable pageable)
+    public ResponseEntity<Page<Product>>findAll(Pageable pageable){
+        Page<Product> productPage =
+    }
 }
