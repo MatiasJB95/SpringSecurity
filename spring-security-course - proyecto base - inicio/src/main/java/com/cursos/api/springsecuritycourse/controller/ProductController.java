@@ -33,7 +33,7 @@ public class ProductController {
         return ResponseEntity.notFound().build();
     }
     @PostMapping ("/{productId}")
-    public ResponseEntity<Product>Create(@RequestBody @Valid SaveProduct saveProduct){
-        
+    public ResponseEntity<Product>createOn(@RequestBody @Valid SaveProduct saveProduct){
+        Product product = productService.createOn(saveProduct);
     }
 }
