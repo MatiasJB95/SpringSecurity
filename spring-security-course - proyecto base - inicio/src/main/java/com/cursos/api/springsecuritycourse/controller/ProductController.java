@@ -34,16 +34,21 @@ public class ProductController {
         }
         return ResponseEntity.notFound().build();
     }
-    @PostMapping ("/{productId}")
+    @PostMapping
     public ResponseEntity<Product>createOn(@RequestBody @Valid SaveProduct saveProduct){
         Product product = productService.createOn(saveProduct);
         return ResponseEntity.status(HttpStatus.CREATED).body(product);
         //JPÁ nunca devuelve null
     }
-    @PostMapping ("/{productId}")
-    public ResponseEntity<Product>createOn(@RequestBody @Valid SaveProduct saveProduct){
-        Product product = productService.createOn(saveProduct);
-        return ResponseEntity.status(HttpStatus.CREATED).body(product);
-      
+    @PutMapping ("/{productId}")
+    public ResponseEntity<Product>updateOneById(@PathVariable Long productId ,
+                                                @RequestBody @Valid SaveProduct saveProduct){
+        Product product = productService.updatOneById(saveProduct);
+        return ResponseEntity.ok(product);
+    }
+    @PutMapping ("/{productId}/disable")
+    public ResponseEntity<Product>disableOneById(@PathVariable Long productId){
+        Product product = productService.disableOneById(productId);
+        return ResponseEntity.ok(product);
     }
 }
