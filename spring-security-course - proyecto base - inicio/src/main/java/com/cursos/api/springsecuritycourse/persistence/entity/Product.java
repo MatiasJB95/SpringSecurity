@@ -13,6 +13,9 @@ public class Product {
     private BigDecimal price;
     @Enumerated(EnumType.STRING)
     private ProductStatus status;
+    @ManyToOne
+    @JoinColumn(name = "category_id")
+    private Category category;
 
     public static enum ProductStatus {
         ENABLE, DISABLE;
@@ -48,6 +51,14 @@ public class Product {
 
     public void setStatus(ProductStatus status) {
         this.status = status;
+    }
+
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
     }
 }
 
