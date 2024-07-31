@@ -14,4 +14,7 @@ public interface ProductService {
 
     Product createOn(SaveProduct saveProduct);
 
+    Product updatOneById(SaveProduct saveProduct);
+
+    Product disableOneById(Long productId);
 }
