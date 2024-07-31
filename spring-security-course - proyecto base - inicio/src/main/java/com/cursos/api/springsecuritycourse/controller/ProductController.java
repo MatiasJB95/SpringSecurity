@@ -1,5 +1,6 @@
 package com.cursos.api.springsecuritycourse.controller;
 
+import com.cursos.api.springsecuritycourse.dto.SaveProduct;
 import com.cursos.api.springsecuritycourse.persistence.entity.Product;
 import com.cursos.api.springsecuritycourse.service.ProductService;
 import jakarta.validation.Valid;
