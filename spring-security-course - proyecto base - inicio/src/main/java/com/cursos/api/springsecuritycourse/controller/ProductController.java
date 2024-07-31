@@ -40,4 +40,10 @@ public class ProductController {
         return ResponseEntity.status(HttpStatus.CREATED).body(product);
         //JPÁ nunca devuelve null
     }
+    @PostMapping ("/{productId}")
+    public ResponseEntity<Product>createOn(@RequestBody @Valid SaveProduct saveProduct){
+        Product product = productService.createOn(saveProduct);
+        return ResponseEntity.status(HttpStatus.CREATED).body(product);
+      
+    }
 }
