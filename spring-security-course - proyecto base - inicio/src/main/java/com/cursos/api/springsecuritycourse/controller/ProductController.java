@@ -5,6 +5,7 @@ import com.cursos.api.springsecuritycourse.service.ProductService;
 import jakarta.validation.Valid;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -35,5 +36,7 @@ public class ProductController {
     @PostMapping ("/{productId}")
     public ResponseEntity<Product>createOn(@RequestBody @Valid SaveProduct saveProduct){
         Product product = productService.createOn(saveProduct);
+        return ResponseEntity.status(HttpStatus.CREATED).body(product);
+        //JPÁ nunca devuelve null
     }
 }
