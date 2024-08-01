@@ -13,4 +13,5 @@ public interface CategoryService {
 
     Optional<Category> findByOneId(Long categoryId);
 
+    Category createOn(SaveCategory saveCategory);
 }
