@@ -37,9 +37,9 @@ public class CategoryController {
         return ResponseEntity.notFound().build();
     }
     @PostMapping
-    public ResponseEntity<Category>createOn(@RequestBody @Valid SaveProduct saveProduct){
-        Category product = categoryService.createOn(saveProduct);
-        return ResponseEntity.status(HttpStatus.CREATED).body(product);
+    public ResponseEntity<Category>createOn(@RequestBody @Valid SaveCategory saveCategory){
+        Category category = categoryService.createOn(saveCategory);
+        return ResponseEntity.status(HttpStatus.CREATED).body(category);
         //JPÁ nunca devuelve null
     }
     @PutMapping ("/{productId}")
