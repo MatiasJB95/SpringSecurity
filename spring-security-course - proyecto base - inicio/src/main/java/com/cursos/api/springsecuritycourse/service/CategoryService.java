@@ -18,5 +18,7 @@ public interface CategoryService {
     Category createOn(@Valid SaveCategory saveCategory);
 
     Category updateOneById(Long categoryId, SaveCategory saveCategory);
+
+    Category disableOneById(Long categoryId);
     
 }
