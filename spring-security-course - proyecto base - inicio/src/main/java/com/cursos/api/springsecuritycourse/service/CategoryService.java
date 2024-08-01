@@ -12,5 +12,5 @@ public interface CategoryService {
 
 
     Optional<Category> findByOneId(Long categoryId);
-    
+
 }
