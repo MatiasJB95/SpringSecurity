@@ -1,6 +1,8 @@
 package com.cursos.api.springsecuritycourse.service;
 
+import com.cursos.api.springsecuritycourse.dto.SaveCategory;
 import com.cursos.api.springsecuritycourse.persistence.entity.Category;
+import jakarta.validation.Valid;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
@@ -13,5 +15,8 @@ public interface CategoryService {
 
     Optional<Category> findByOneId(Long categoryId);
 
-    Category createOn(SaveCategory saveCategory);
+    Category createOn(@Valid SaveCategory saveCategory);
+
+    Category updateOneById(Long categoryId, SaveCategory saveCategory);
+    
 }
