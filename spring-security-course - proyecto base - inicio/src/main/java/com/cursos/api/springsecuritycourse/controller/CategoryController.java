@@ -1,5 +1,6 @@
 package com.cursos.api.springsecuritycourse.controller;
 
+import com.cursos.api.springsecuritycourse.dto.SaveCategory;
 import com.cursos.api.springsecuritycourse.dto.SaveProduct;
 import com.cursos.api.springsecuritycourse.persistence.entity.Category;
 import com.cursos.api.springsecuritycourse.service.CategoryService;
@@ -37,16 +38,14 @@ public class CategoryController {
         return ResponseEntity.notFound().build();
     }
     @PostMapping
-    public ResponseEntity<Category>createOn(@RequestBody @Valid SaveCategory saveCategory){
+    public ResponseEntity<Category>createOnById(@RequestBody @Valid SaveCategory saveCategory){
         Category category = categoryService.createOn(saveCategory);
         return ResponseEntity.status(HttpStatus.CREATED).body(category);
-        //JPÁ nunca devuelve null
     }
-    @PutMapping ("/{productId}")
-    public ResponseEntity<Category>updateOneById(@PathVariable Long productId ,
-                                                @RequestBody @Valid SaveProduct saveProduct){
-        Category product = categoryService.updatOneById(saveProduct);
-        return ResponseEntity.ok(product);
+    @PutMapping("/{categoryId}")
+    public ResponseEntity<Category>updateOneById(@PathVariable Long categoryId, @RequestBody @Valid SaveCategory saveCategory){
+        Category category = categoryService.updateOneById(categoryId, saveCategory);
+        return ResponseEntity.ok(category);
     }
     @PutMapping ("/{productId}/disable")
     public ResponseEntity<Category>disableOneById(@PathVariable Long productId){
