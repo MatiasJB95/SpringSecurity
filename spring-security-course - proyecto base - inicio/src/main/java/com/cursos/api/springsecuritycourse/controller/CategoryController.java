@@ -47,9 +47,9 @@ public class CategoryController {
         Category category = categoryService.updateOneById(categoryId, saveCategory);
         return ResponseEntity.ok(category);
     }
-    @PutMapping ("/{productId}/disable")
-    public ResponseEntity<Category>disableOneById(@PathVariable Long productId){
-        Category product = categoryService.disableOneById(productId);
-        return ResponseEntity.ok(product);
+    @PutMapping ("/{categoryId}/disable")
+    public ResponseEntity<Category>disableOneById(@PathVariable Long categoryId){
+        Category category = categoryService.disableOneById(categoryId);
+        return ResponseEntity.ok(category);
     }
 }
