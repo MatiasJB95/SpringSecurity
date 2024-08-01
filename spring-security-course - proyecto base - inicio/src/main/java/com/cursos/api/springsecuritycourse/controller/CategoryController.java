@@ -2,7 +2,6 @@ package com.cursos.api.springsecuritycourse.controller;
 
 import com.cursos.api.springsecuritycourse.dto.SaveProduct;
 import com.cursos.api.springsecuritycourse.persistence.entity.Category;
-import com.cursos.api.springsecuritycourse.persistence.entity.Category;
 import com.cursos.api.springsecuritycourse.service.CategoryService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,11 +28,11 @@ public class CategoryController {
         return ResponseEntity.notFound().build();
     }
 
-    @GetMapping("/{productId}")
-    public ResponseEntity<Category>findOneById(@PathVariable Long productId){
-        Optional<Category> product = categoryService.findByOneId(productId);
-        if (product.isPresent()){
-            return ResponseEntity.ok(product.get());
+    @GetMapping("/{categoryId}")
+    public ResponseEntity<Category>findOneById(@PathVariable Long categoryId){
+        Optional<Category> category = categoryService.findByOneId(categoryId);
+        if (category.isPresent()){
+            return ResponseEntity.ok(category.get());
         }
         return ResponseEntity.notFound().build();
     }
