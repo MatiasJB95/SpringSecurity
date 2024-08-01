@@ -11,4 +11,6 @@ public interface CategoryService {
     Page<Category> findAll(Pageable pageable);
 
 
+    Optional<Category> findByOneId(Long categoryId);
+    
 }
