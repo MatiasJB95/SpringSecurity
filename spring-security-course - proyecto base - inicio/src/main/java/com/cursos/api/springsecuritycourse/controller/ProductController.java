@@ -43,7 +43,7 @@ public class ProductController {
     @PutMapping ("/{productId}")
     public ResponseEntity<Product>updateOneById(@PathVariable Long productId ,
                                                 @RequestBody @Valid SaveProduct saveProduct){
-        Product product = productService.updatOneById(saveProduct);
+        Product product = productService.updatOneById(productId, saveProduct);
         return ResponseEntity.ok(product);
     }
     @PutMapping ("/{productId}/disable")
