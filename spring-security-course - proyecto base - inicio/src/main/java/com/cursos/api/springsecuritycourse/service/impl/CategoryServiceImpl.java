@@ -1,6 +1,7 @@
 package com.cursos.api.springsecuritycourse.service.impl;
 
 import com.cursos.api.springsecuritycourse.dto.SaveCategory;
+import com.cursos.api.springsecuritycourse.exception.ObjectNotFoundException;
 import com.cursos.api.springsecuritycourse.persistence.entity.Category;
 import com.cursos.api.springsecuritycourse.persistence.repository.CategoryRepository;
 import com.cursos.api.springsecuritycourse.service.CategoryService;
@@ -37,7 +38,15 @@ public class CategoryServiceImpl implements CategoryService {
 
     @Override
     public Category updateOneById(Long categoryId, SaveCategory saveCategory) {
-        return null;
+        Category categoryFromDB = categoryRepository.findById(categoryId)
+                        .orElseThrow(()-> new ObjectNotFoundException("Category not found with id "+ categoryId));
+
+
+        categoryFromDB.setName(saveCategory.getName());
+        categoryFromDB.setStatus(Category.CategoryStatus.ENABLE);
+
+
+        return categoryRepository.save(categoryFromDB);
     }
 
     @Override
