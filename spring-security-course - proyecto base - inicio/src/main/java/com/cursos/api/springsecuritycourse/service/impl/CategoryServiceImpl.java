@@ -40,13 +40,16 @@ public class CategoryServiceImpl implements CategoryService {
     public Category updateOneById(Long categoryId, SaveCategory saveCategory) {
         Category categoryFromDB = categoryRepository.findById(categoryId)
                         .orElseThrow(()-> new ObjectNotFoundException("Category not found with id "+ categoryId));
-        
+
         categoryFromDB.setName(saveCategory.getName());
         return categoryRepository.save(categoryFromDB);
     }
 
     @Override
     public Category disableOneById(Long categoryId) {
-        return null;
+        Category categoryFromDB = categoryRepository.findById(categoryId)
+                .orElseThrow(()-> new ObjectNotFoundException("Category not found with id "+ categoryId));
+        categoryFromDB.setStatus(Category.CategoryStatus.DISABLED);
+        return categoryRepository.save(categoryFromDB);
     }
 }
