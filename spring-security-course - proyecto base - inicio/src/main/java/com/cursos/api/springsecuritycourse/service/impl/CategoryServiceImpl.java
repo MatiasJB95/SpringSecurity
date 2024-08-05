@@ -27,7 +27,12 @@ public class CategoryServiceImpl implements CategoryService {
 
     @Override
     public Category createOn(SaveCategory saveCategory) {
-        
+        Category category = new Category();
+        category.setName(saveCategory.getName());
+        category.setStatus(Category.CategoryStatus.ENABLE);
+
+
+        return categoryRepository.save(category);
     }
 
     @Override
