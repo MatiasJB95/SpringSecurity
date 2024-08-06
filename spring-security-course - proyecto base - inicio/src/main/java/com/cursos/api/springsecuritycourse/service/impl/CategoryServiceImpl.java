@@ -30,7 +30,7 @@ public class CategoryServiceImpl implements CategoryService {
     public Category createOn(SaveCategory saveCategory) {
         Category category = new Category();
         category.setName(saveCategory.getName());
-        category.setStatus(Category.CategoryStatus.ENABLE);
+        category.setStatus(Category.CategoryStatus.ENABLED);
 
 
         return categoryRepository.save(category);
