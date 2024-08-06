@@ -13,7 +13,7 @@ public class Category {
     private CategoryStatus status;
 
     public static enum CategoryStatus{
-        ENABLE, DISABLED;
+        ENABLED, DISABLED;
     }
 
     public Long getId() {
