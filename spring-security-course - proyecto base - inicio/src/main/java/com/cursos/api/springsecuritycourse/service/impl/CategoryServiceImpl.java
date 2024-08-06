@@ -52,5 +52,5 @@ public class CategoryServiceImpl implements CategoryService {
         categoryFromDB.setStatus(Category.CategoryStatus.DISABLED);
         return categoryRepository.save(categoryFromDB);
     }
-    
+
 }
