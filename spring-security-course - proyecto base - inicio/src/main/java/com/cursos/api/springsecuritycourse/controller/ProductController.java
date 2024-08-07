@@ -4,6 +4,7 @@ import com.cursos.api.springsecuritycourse.dto.SaveProduct;
 import com.cursos.api.springsecuritycourse.persistence.entity.Product;
 import com.cursos.api.springsecuritycourse.service.ProductService;
 import jakarta.validation.Valid;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
@@ -15,6 +16,7 @@ import java.util.Optional;
 @RestController
 @RequestMapping("/products")
 public class ProductController {
+    @Autowired
     private ProductService productService;
 
     @GetMapping
@@ -49,6 +51,11 @@ public class ProductController {
     @PutMapping ("/{productId}/disable")
     public ResponseEntity<Product>disableOneById(@PathVariable Long productId){
         Product product = productService.disableOneById(productId);
+        return ResponseEntity.ok(product);
+    }
+    @PutMapping ("/{productId}/enabled")
+    public ResponseEntity<Product>enabledOneById(@PathVariable Long productId){
+        Product product = productService.enabledOneById(productId);
         return ResponseEntity.ok(product);
     }
 }
