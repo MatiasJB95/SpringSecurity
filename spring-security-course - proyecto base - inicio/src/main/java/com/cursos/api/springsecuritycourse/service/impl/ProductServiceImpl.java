@@ -61,4 +61,13 @@ public class ProductServiceImpl implements ProductService {
         productFromDB.setStatus(Product.ProductStatus.DISABLED);
         return productRepository.save(productFromDB);
     }
+
+    @Override
+    public Product enabledOneById(Long productId) {
+        Product productFromDB = productRepository.findById(productId)
+                .orElseThrow(() -> new ObjectNotFoundException("Product not found by id" +productId));
+        productFromDB.setStatus(Product.ProductStatus.ENABLED);
+        return productRepository.save(productFromDB);
+    }
+
 }
