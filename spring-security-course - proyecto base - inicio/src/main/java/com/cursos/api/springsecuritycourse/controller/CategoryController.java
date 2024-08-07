@@ -52,4 +52,9 @@ public class CategoryController {
         Category category = categoryService.disableOneById(categoryId);
         return ResponseEntity.ok(category);
     }
+    @PutMapping ("/{categoryId}/enabled")
+    public ResponseEntity<Category>enabledOneById(@PathVariable Long categoryId){
+        Category category = categoryService.enabledOneById(categoryId);
+        return ResponseEntity.ok(category);
+    }
 }
