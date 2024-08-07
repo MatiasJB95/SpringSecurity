@@ -53,4 +53,12 @@ public class CategoryServiceImpl implements CategoryService {
         return categoryRepository.save(categoryFromDB);
     }
 
+    @Override
+    public Category enabledOneById(Long categoryId) {
+        Category categoryFromDB = categoryRepository.findById(categoryId)
+                .orElseThrow(()-> new ObjectNotFoundException("Category not found with id "+ categoryId));
+        categoryFromDB.setStatus(Category.CategoryStatus.ENABLED);
+        return categoryRepository.save(categoryFromDB);
+    }
+
 }
