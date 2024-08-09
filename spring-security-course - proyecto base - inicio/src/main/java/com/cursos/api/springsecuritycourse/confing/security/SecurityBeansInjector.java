@@ -17,7 +17,8 @@ public class SecurityBeansInjector {
     }
     @Bean
     public AuthenticationProvider authenticationProvider() {
-        DaoAuthenticationProvider authenticationStrategy
+        DaoAuthenticationProvider authenticationStrategy = new DaoAuthenticationProvider();
+        
     }
 
 }
