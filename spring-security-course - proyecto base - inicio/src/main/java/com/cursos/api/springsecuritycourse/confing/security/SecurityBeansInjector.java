@@ -22,5 +22,4 @@ public class SecurityBeansInjector {
         authenticationStrategy.setUserDetailsService(null);
         return authenticationStrategy;
     }
-
 }
