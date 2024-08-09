@@ -3,9 +3,11 @@ package com.cursos.api.springsecuritycourse.persistence.entity;
 import com.cursos.api.springsecuritycourse.persistence.util.Role;
 import jakarta.persistence.*;
 import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Collection;
+import java.util.stream.Collectors;
 
 @Entity
 @Table(name = "\"user\"")
@@ -21,7 +23,14 @@ public class User implements UserDetails {
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return null;
+        if(role == null) return null;
+        if(role.getPermissions() == null) return null;
+     return   role.getPermissions().stream()
+                .map(each -> {
+                    String permission = each.name();
+                    return new SimpleGrantedAuthority(permission);
+                })
+                .collect(Collectors.toList());
     }
 
     @Override
