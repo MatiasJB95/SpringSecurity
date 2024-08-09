@@ -12,10 +12,10 @@ public class SecurityBeansInjector {
     @Autowired
     private AuthenticationConfiguration authenticationConfiguration;
 
-    
+
     @Bean
    public AuthenticationManager authenticationManager() {
-
+        authenticationConfiguration
 
 
     }
