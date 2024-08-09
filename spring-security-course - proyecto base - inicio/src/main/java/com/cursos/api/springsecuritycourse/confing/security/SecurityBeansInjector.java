@@ -14,9 +14,8 @@ public class SecurityBeansInjector {
 
 
     @Bean
-   public AuthenticationManager authenticationManager() {
-        authenticationConfiguration
-
+    public AuthenticationManager authenticationManager() throws Exception {
+        authenticationConfiguration.getAuthenticationManager();
 
     }
 }
