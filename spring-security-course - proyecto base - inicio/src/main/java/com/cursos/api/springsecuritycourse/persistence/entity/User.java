@@ -31,7 +31,7 @@ public class User implements UserDetails {
 
  //               .map(each -> {
  //                   String permission = each.name();//                  return new SimpleGrantedAuthority(permission);
- //               })//////////////
+ //               })////////////
                 .collect(Collectors.toList());
     }
 
