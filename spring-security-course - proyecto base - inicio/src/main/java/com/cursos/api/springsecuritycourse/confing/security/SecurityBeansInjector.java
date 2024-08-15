@@ -1,5 +1,6 @@
 package com.cursos.api.springsecuritycourse.confing.security;
 
+import com.cursos.api.springsecuritycourse.exception.ObjectNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -34,7 +35,8 @@ public class SecurityBeansInjector {
     @Bean
     public UserDetailsService userDetailsService() {
         return (username)-> {
-            
+          return userRepository.findByUsername(username)
+                  .orElseThrow(()-> new ObjectNotFoundException("User not fount whith username " + username));
         };
     }
 }
