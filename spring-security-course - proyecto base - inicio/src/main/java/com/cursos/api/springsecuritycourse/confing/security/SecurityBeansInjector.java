@@ -7,6 +7,7 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 @Configuration
 public class SecurityBeansInjector {
@@ -21,6 +22,11 @@ public class SecurityBeansInjector {
         authenticationStrategy.setPasswordEncoder(null);
         authenticationStrategy.setUserDetailsService(null);
         return authenticationStrategy;
+    }
+
+    @Bean
+    public PasswordEncoder passwordEncoder(){
+        return 
     }
 }
 
