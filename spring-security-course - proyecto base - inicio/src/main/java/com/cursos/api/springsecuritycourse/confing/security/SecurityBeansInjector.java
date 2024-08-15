@@ -20,7 +20,7 @@ public class SecurityBeansInjector {
     @Bean
     public AuthenticationProvider authenticationProvider() {
         DaoAuthenticationProvider authenticationStrategy = new DaoAuthenticationProvider();
-        authenticationStrategy.setPasswordEncoder(null);
+        authenticationStrategy.setPasswordEncoder(passwordEncoder());
         authenticationStrategy.setUserDetailsService(null);
         return authenticationStrategy;
     }
