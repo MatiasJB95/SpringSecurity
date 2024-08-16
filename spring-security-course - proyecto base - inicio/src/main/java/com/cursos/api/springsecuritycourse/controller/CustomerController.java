@@ -1,5 +1,6 @@
 package com.cursos.api.springsecuritycourse.controller;
 
+import com.cursos.api.springsecuritycourse.dto.SaveUser;
 import org.springframework.web.bind.annotation.RestController;
 
 import jakarta.validation.Valid;
@@ -21,11 +22,10 @@ public class CustomerController {
     private AuthenticationService authenticateService;
 
     @PostMapping()
-    public ResponseEntity <RegisteredUser> registerOne(@RequestBody @Valid
-        SaveUser newUser) {
-            RegisteredUser = authenticateService.registerOneCustomer(newUser);
+    public ResponseEntity<RegisteredUser> registerOne(@RequestBody @Valid SaveUser newUser) {
+        RegisteredUser registeredUser = authenticateService.registerOneCustomer(newUser);
 
-            return ResponseEntity.status(HttpStatus.CREATED).body(registerOne);
+            return ResponseEntity.status(HttpStatus.CREATED).body(registeredUser);
     }
     
 }
