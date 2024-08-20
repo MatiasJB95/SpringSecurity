@@ -58,5 +58,5 @@ public class ProductController {
         Product product = productService.enabledOneById(productId);
         return ResponseEntity.ok(product);
     }
-    8}4+4
+    8}4
 }
