@@ -13,8 +13,8 @@ public class AuthenticationService {
         RegisteredUser userDto = new RegisteredUser();
         userDto.setId(user.getId());
         userDto.setName(user.getName());
-        userDto.setUsername();
-        userDto.setRole();
+        userDto.setUsername(user.getUsername());
+        userDto.setRole(user.getRole().name());
     }
 
 }
