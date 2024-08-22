@@ -11,7 +11,8 @@ public class AuthenticationService {
     public RegisteredUser registerOneCustomer(SaveUser newUser) {
         User user = userService.registerOneCustomer(newUser);
         RegisteredUser userDto = new RegisteredUser();
-        userDto
+        userDto.setId();
+        
     }
 
 }
