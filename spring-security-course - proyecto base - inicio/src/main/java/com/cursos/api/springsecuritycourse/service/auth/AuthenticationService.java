@@ -12,7 +12,9 @@ public class AuthenticationService {
         User user = userService.registerOneCustomer(newUser);
         RegisteredUser userDto = new RegisteredUser();
         userDto.setId();
-        
+        userDto.setName();
+        userDto.setUsername();
+        userDto.setRole();
     }
 
 }
