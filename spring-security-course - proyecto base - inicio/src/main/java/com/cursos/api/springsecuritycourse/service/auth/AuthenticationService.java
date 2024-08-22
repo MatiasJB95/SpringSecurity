@@ -10,7 +10,8 @@ public class AuthenticationService {
 
     public RegisteredUser registerOneCustomer(SaveUser newUser) {
         User user = userService.registerOneCustomer(newUser);
-        Re
+        RegisteredUser userDto = new RegisteredUser();
+        userDto
     }
 
 }
