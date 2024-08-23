@@ -17,8 +17,7 @@ public class AuthenticationService {
         userDto.setRole(user.getRole().name());
         String jwt =jwtService.generaltoken(user)
         userDto.setJwt(jwt); userDto.setId(user.getId());
-        userDto.setName(user.getName());
-       
+
 
         return null;
     }
