@@ -19,7 +19,7 @@ public class AuthenticationService {
         userDto.setJwt(jwt); userDto.setId(user.getId());
         userDto.setName(user.getName());
         userDto.setUsername(user.getUsername());
-        userDto.setRole(user.getRole().name());
+   
         return null;
     }
 
