@@ -18,8 +18,8 @@ public class AuthenticationService {
         String jwt =jwtService.generaltoken(user)
         userDto.setJwt(jwt); userDto.setId(user.getId());
         userDto.setName(user.getName());
-        userDto.setUsername(user.getUsername());
-   
+       
+
         return null;
     }
 
