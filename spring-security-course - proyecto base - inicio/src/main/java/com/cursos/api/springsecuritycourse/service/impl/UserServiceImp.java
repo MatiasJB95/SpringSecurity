@@ -25,7 +25,7 @@ public class UserServiceImp implements UserService {
 
         User user = new User();
         user.setUsername(newUser.getUsername());
-        user.setPassword(newUser.getPassword());
+        user.setPassword(passwordEncoder.encode(newUser.getPassword()));
         user.setName(newUser.getName());
         user.setRole(Role.ROLE_CUSTOMER);
 
