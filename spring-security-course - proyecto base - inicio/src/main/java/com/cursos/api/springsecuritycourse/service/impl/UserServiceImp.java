@@ -19,9 +19,10 @@ public class UserServiceImp implements UserService {
     public User registerOneCustomer(SaveUser newUser) {
         validatePassword(newUser);
 
+
         User user = new User();
         user.setUsername(newUser.getUsername());
-        user.setPassword(newUser.getPassword();
+        user.setPassword(newUser.getPassword());
         user.setName(newUser.getName());
         user.setRole(Role.ROLE_CUSTOMER);
 
