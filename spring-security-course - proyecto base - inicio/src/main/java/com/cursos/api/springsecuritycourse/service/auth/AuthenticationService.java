@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 public class AuthenticationService {
 
     @Autowired
+    userService
 
     public RegisteredUser registerOneCustomer(SaveUser newUser) {
         User user = userService.registerOneCustomer(newUser);
