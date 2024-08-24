@@ -7,6 +7,7 @@ import com.cursos.api.springsecuritycourse.persistence.repository.UserRepository
 import com.cursos.api.springsecuritycourse.persistence.util.Role;
 import com.cursos.api.springsecuritycourse.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
@@ -15,6 +16,8 @@ public class UserServiceImp implements UserService {
 
     @Autowired
     private UserRepository userRepository;
+    @Autowired
+    private PasswordEncoder passwordEncoder;
     @Override
     public User registerOneCustomer(SaveUser newUser) {
         validatePassword(newUser);
