@@ -12,7 +12,8 @@ public class AuthenticationService {
     @Autowired
      private  UserService  userService;
     @Autowired
-    
+    private JwtService jwtService;
+
 
     public RegisteredUser registerOneCustomer(SaveUser newUser) {
         User user = userService.registerOneCustomer(newUser);
