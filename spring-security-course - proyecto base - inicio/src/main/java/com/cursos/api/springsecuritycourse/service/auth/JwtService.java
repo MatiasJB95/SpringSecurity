@@ -28,7 +28,7 @@ public class JwtService {
                 .setExpiration(expiration)
                 .setHeaderParam(Header.TYPE, Header.JWT_TYPE)
                 .signWith(generateKey(), SignatureAlgorithm.ES256)
-                
+                .compact()
         );
 
         return jwt;
