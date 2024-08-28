@@ -3,6 +3,7 @@ package com.cursos.api.springsecuritycourse.service.auth;
 import io.jsonwebtoken.Header;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
+import io.jsonwebtoken.security.Keys;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -35,6 +36,7 @@ public class JwtService {
     }
 
     private Key generateKey() {
-        return Keys.
+        byte[] key = SECRET_KEY.getBytes();
+        return Keys.hmacShaKeyFor(key);
     }
 }
