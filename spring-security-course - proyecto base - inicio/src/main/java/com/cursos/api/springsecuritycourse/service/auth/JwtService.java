@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 
+import java.security.Key;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
@@ -28,9 +29,12 @@ public class JwtService {
                 .setExpiration(expiration)
                 .setHeaderParam(Header.TYPE, Header.JWT_TYPE)
                 .signWith(generateKey(), SignatureAlgorithm.ES256)
-                .compact()
-        );
+                .compact());
 
         return jwt;
+    }
+
+    private Key generateKey() {
+        return Keys.
     }
 }
