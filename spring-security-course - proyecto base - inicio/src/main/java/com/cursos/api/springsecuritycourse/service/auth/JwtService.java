@@ -1,5 +1,6 @@
 package com.cursos.api.springsecuritycourse.service.auth;
 
+import io.jsonwebtoken.Header;
 import io.jsonwebtoken.Jwts;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Value;
@@ -24,6 +25,7 @@ public class JwtService {
                 .setSubject(user.getUsername())
                 .setIssuedAt(issuedAt)
                 .setExpiration(expiration)
+                .setHeaderParam(Header.TYPE, Header.JWT_TYPE)
         );
 
         return jwt;
