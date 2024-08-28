@@ -23,7 +23,7 @@ public class JwtService {
                 .setClaims(extraClaims)
                 .setSubject(user.getUsername())
                 .setIssuedAt(issuedAt)
-                .setExpiration()
+                .setExpiration(expiration)
         );
 
         return jwt;
