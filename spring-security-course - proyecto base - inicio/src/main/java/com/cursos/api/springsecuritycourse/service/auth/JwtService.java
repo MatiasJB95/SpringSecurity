@@ -18,10 +18,12 @@ public class JwtService {
 
     public String generateToken(UserDetails user,  Map<String, Object> extraClaims ) {
         Date issuedAt= new Date(System.currentTimeMillis());
+        Date
         String jwt= String.valueOf(Jwts.builder()
                 .setClaims(extraClaims)
                 .setSubject(user.getUsername())
                 .setIssuedAt(issuedAt)
+                .setExpiration()
         );
 
         return jwt;
