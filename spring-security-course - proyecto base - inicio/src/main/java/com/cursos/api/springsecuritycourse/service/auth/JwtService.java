@@ -20,6 +20,8 @@ public class JwtService {
     @Value("${security.jwt.expiration-in-minutes}")
     private Long EXPIRATION_IN_MINUTES;
 
+    private String
+
     public String generateToken(UserDetails user,  Map<String, Object> extraClaims ) {
         Date issuedAt= new Date(System.currentTimeMillis());
         Date expiration= new Date( (EXPIRATION_IN_MINUTES * 60 * 1000) + issuedAt.getTime());
