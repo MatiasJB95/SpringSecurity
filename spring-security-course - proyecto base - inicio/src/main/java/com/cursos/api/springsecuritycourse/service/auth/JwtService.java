@@ -12,7 +12,10 @@ public class JwtService {
 
     public String generateToken(UserDetails user,  Map<String, Object> extraClaims ) {
         String jwt= String.valueOf(Jwts.builder()
-                .setClaims(extraClaims));
+                .setClaims(extraClaims)
+                .setSubject(user.getUsername())
+                .setIssuedAt()
+        );
 
         return jwt;
     }
