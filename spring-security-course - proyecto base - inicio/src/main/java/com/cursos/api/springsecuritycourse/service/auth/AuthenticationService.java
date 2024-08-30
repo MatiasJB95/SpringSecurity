@@ -41,6 +41,6 @@ public class AuthenticationService {
         extraClaims.put("authorities",user.getAuthorities());
         return extraClaims;
     }
-    {
+    
 
 }
