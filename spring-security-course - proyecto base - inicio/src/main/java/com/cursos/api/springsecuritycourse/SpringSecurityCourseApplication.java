@@ -1,4 +1,4 @@
-7654321package com.cursos.api.springsecuritycourse;
+87654321package com.cursos.api.springsecuritycourse;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
