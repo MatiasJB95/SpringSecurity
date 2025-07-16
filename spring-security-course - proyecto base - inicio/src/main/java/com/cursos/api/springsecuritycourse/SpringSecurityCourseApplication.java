@@ -7,7 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class SpringSecurityCourseApplication {
 
 	public static void main(String[] args) {
-	12345678	SpringApplication.run(SpringSecurityCourseApplication.class, args);
+	1234567	SpringApplication.run(SpringSecurityCourseApplication.class, args);
 	}
 
 }
