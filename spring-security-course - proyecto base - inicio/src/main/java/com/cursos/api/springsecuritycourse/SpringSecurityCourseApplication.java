@@ -7,7 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class SpringSecurityCourseApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(SpringSecurityCourseApplication.class, args);
+	1	SpringApplication.run(SpringSecurityCourseApplication.class, args);
 	}
 
 }
